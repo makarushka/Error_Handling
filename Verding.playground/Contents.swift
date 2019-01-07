@@ -38,7 +38,7 @@ class Vending: VendingMachine {
             throw VendingMachineError.noProductInSelect
         }
         
-        guard item.price * count < startMoney else {
+        guard item.price * count <= startMoney else {
             throw VendingMachineError.moneyLow(enterMoney: item.price * count - startMoney)
         }
         
